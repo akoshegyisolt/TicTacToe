@@ -1,0 +1,96 @@
+# depslib dependency file v1.0
+1678632563 source:c:\users\asus\desktop\bevprog\graphicslib64_0412\main.cpp
+	"graphics.hpp"
+	<math.h>
+
+1678282651 c:\users\asus\desktop\bevprog\graphicslib64_0412\include\graphics.hpp
+	<string>
+	<vector>
+
+1678699936 source:c:\users\asus\desktop\bevprog\gyak2\graphicslib64_0412\main.cpp
+	"graphics.hpp"
+
+1678282651 c:\users\asus\desktop\bevprog\gyak2\graphicslib64_0412\include\graphics.hpp
+	<string>
+	<vector>
+
+1683915541 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\application.cpp
+	"graphics.hpp"
+	"application.hpp"
+	"widget.hpp"
+	"menu.hpp"
+	"numbox.hpp"
+	<vector>
+	<fstream>
+	"statictext.hpp"
+	"eventbutton.hpp"
+
+1678286251 c:\users\asus\desktop\bevprog\projektek\tictactoe\include\graphics.hpp
+	<string>
+	<vector>
+
+1684001904 c:\users\asus\desktop\bevprog\projektek\tictactoe\application.hpp
+	<vector>
+	<iostream>
+	<functional>
+
+1683541518 c:\users\asus\desktop\bevprog\projektek\tictactoe\widget.hpp
+	"graphics.hpp"
+	"application.hpp"
+
+1682627806 c:\users\asus\desktop\bevprog\projektek\tictactoe\menu.hpp
+	"widget.hpp"
+	"choice.hpp"
+	<vector>
+	"application.hpp"
+
+1682627886 c:\users\asus\desktop\bevprog\projektek\tictactoe\choice.hpp
+	"widget.hpp"
+	"graphics.hpp"
+
+1682627795 c:\users\asus\desktop\bevprog\projektek\tictactoe\numbox.hpp
+	"widget.hpp"
+	"application.hpp"
+
+1683541518 c:\users\asus\desktop\bevprog\projektek\tictactoe\statictext.hpp
+	"widget.hpp"
+
+1683915224 c:\users\asus\desktop\bevprog\projektek\tictactoe\eventbutton.hpp
+	"statictext.hpp"
+	<functional>
+	"application.hpp"
+
+1682627894 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\choice.cpp
+	"choice.hpp"
+	"graphics.hpp"
+
+1683915233 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\eventbutton.cpp
+	"eventbutton.hpp"
+	"statictext.hpp"
+	"application.hpp"
+	<functional>
+
+1683365264 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\main.cpp
+	"application.hpp"
+
+1682628129 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\menu.cpp
+	"graphics.hpp"
+	"menu.hpp"
+	"choice.hpp"
+	<vector>
+	"application.hpp"
+
+1682627795 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\numbox.cpp
+	"graphics.hpp"
+	"numbox.hpp"
+	<sstream>
+	"application.hpp"
+
+1683541529 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\statictext.cpp
+	"statictext.hpp"
+
+1683541518 source:c:\users\asus\desktop\bevprog\projektek\tictactoe\widget.cpp
+	"widget.hpp"
+	"graphics.hpp"
+	"application.hpp"
+
