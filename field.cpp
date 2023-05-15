@@ -40,5 +40,5 @@ void Field::draw()
 void Field::action(event ev)
 {
     evt(parent);
-    parent->round;
+
 }

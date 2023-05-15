@@ -41,6 +41,11 @@ void Application::addeventbutton(int xx, int yy, int sxx, int syy, unsigned char
     eventbuttons.push_back(new Eventbutton(this, xx, yy, sxx, syy, rr, gg, bb, ss, m));
 }
 
+void Application::addfield(int xx, int yy, int _size,std::function<void(Application*)> m)
+{
+
+}
+
 void Application::addwidget(Widget* nw)
 {
     w.push_back(nw);

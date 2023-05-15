@@ -3,6 +3,7 @@
 
 #include "eventbutton.hpp"
 #include "graphics.hpp"
+#include "application.hpp"
 
 class Field: public Eventbutton
 {

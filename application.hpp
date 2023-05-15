@@ -9,6 +9,7 @@ class Menu;
 class Numbox;
 class Statictext;
 class Eventbutton;
+class Field;
 
 class Application
 {
@@ -18,6 +19,7 @@ protected:
     std::vector<Numbox*> numboxes;
     std::vector<Statictext*> statictexts;
     std::vector<Eventbutton*> eventbuttons;
+
     int X,Y;
     unsigned char r,g,b;
     void cclear();
@@ -31,6 +33,7 @@ public:
     void addnumbox(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb);
     void addstatictext(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb, std::string ss);
     void addeventbutton(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb, std::string ss, std::function<void(Application*)> m);
+    void addfield(int xx, int yy, int _size,std::function<void(Application*)> m);
     void addwidget(Widget* nw);
     void eventloop();
 };

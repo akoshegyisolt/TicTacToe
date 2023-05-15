@@ -63,6 +63,7 @@
 		<Unit filename="menu.hpp" />
 		<Unit filename="numbox.cpp" />
 		<Unit filename="numbox.hpp" />
+		<Unit filename="player.hpp" />
 		<Unit filename="statictext.cpp" />
 		<Unit filename="statictext.hpp" />
 		<Unit filename="tictactoe.hpp" />
