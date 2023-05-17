@@ -102,7 +102,7 @@
 	"widget.hpp"
 	"graphics.hpp"
 
-1684312250 c:\users\asus\documents\github\tictactoe\widget.hpp
+1684332172 c:\users\asus\documents\github\tictactoe\widget.hpp
 	"graphics.hpp"
 	"application.hpp"
 
@@ -110,7 +110,7 @@
 	<string>
 	<vector>
 
-1684314734 c:\users\asus\documents\github\tictactoe\application.hpp
+1684337783 c:\users\asus\documents\github\tictactoe\application.hpp
 	<vector>
 	<iostream>
 	<functional>
@@ -129,7 +129,7 @@
 1683541518 c:\users\asus\documents\github\tictactoe\statictext.hpp
 	"widget.hpp"
 
-1684314506 source:c:\users\asus\documents\github\tictactoe\main.cpp
+1684316447 source:c:\users\asus\documents\github\tictactoe\main.cpp
 	"application.hpp"
 	"tictactoe.hpp"
 
@@ -159,12 +159,12 @@
 1683541529 source:c:\users\asus\documents\github\tictactoe\statictext.cpp
 	"statictext.hpp"
 
-1683541518 source:c:\users\asus\documents\github\tictactoe\widget.cpp
+1684337783 source:c:\users\asus\documents\github\tictactoe\widget.cpp
 	"widget.hpp"
 	"graphics.hpp"
 	"application.hpp"
 
-1684314744 source:c:\users\asus\documents\github\tictactoe\application.cpp
+1684337783 source:c:\users\asus\documents\github\tictactoe\application.cpp
 	"graphics.hpp"
 	"application.hpp"
 	"widget.hpp"
@@ -175,31 +175,32 @@
 	"statictext.hpp"
 	"eventbutton.hpp"
 
-1684314298 source:c:\users\asus\documents\github\tictactoe\player.cpp
+1684327365 source:c:\users\asus\documents\github\tictactoe\player.cpp
 	"player.hpp"
 	<vector>
 
-1684311480 c:\users\asus\documents\github\tictactoe\player.hpp
+1684327365 c:\users\asus\documents\github\tictactoe\player.hpp
 	<vector>
 
-1684312129 source:c:\users\asus\documents\github\tictactoe\field.cpp
+1684336738 source:c:\users\asus\documents\github\tictactoe\field.cpp
 	"field.hpp"
 	<functional>
 	"graphics.hpp"
 	<cmath>
 
-1684313277 c:\users\asus\documents\github\tictactoe\field.hpp
+1684327365 c:\users\asus\documents\github\tictactoe\field.hpp
 	"eventbutton.hpp"
 	"graphics.hpp"
 	"application.hpp"
 
-1684314991 source:c:\users\asus\documents\github\tictactoe\tictactoe.cpp
+1684332253 source:c:\users\asus\documents\github\tictactoe\tictactoe.cpp
 	"tictactoe.hpp"
 	"graphics.hpp"
 	"player.hpp"
 	<functional>
+	<iostream>
 
-1684311679 c:\users\asus\documents\github\tictactoe\tictactoe.hpp
+1684337783 c:\users\asus\documents\github\tictactoe\tictactoe.hpp
 	"application.hpp"
 	"player.hpp"
 	"field.hpp"

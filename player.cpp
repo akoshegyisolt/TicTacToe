@@ -56,8 +56,8 @@ bool Player::addfield(int x, int y)
         i++;
         j++;
     }
-    i=boardx;
-    j=boardy;
+    i=boardx-1;
+    j=boardy-1;
     n=0;
     while(i>=0 && j>=0){
         if(board[i][j]){
@@ -73,4 +73,13 @@ bool Player::addfield(int x, int y)
         j--;
     }
     return false;
+}
+
+void Player::reset()
+{
+    for(size_t i=0; i<board.size(); i++){
+        for(size_t j=0; j<board[i].size(); j++){
+            board[i][j]=0;
+        }
+    }
 }

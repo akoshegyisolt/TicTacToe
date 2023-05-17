@@ -12,6 +12,7 @@ public:
     Player(int boardxx, int boardyy, int n);
     Player();
     bool addfield(int x,int y);
+    void reset();
 };
 
 #endif // PLAYER_HPP_INCLUDED

@@ -14,12 +14,11 @@ class Field;
 class Application
 {
 protected:
-    std::vector<Widget*> w;
     std::vector<Menu*> menus;
+    std::vector<Widget*> w;
     std::vector<Numbox*> numboxes;
     std::vector<Statictext*> statictexts;
     std::vector<Eventbutton*> eventbuttons;
-
     int XX,YY;
     unsigned char r,g,b;
     void cclear();
@@ -33,6 +32,7 @@ public:
     void addeventbutton(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb, std::string ss, std::function<void(Eventbutton*)> m);
     void addwidget(Widget* nw);
     virtual void eventloop();
+    void deletewidget(Widget* ow);
 };
 
 #endif // APPLICATION_HPP_INCLUDED

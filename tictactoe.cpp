@@ -2,6 +2,7 @@
 #include "graphics.hpp"
 #include "player.hpp"
 #include <functional>
+#include <iostream>
 
 using namespace genv;
 
@@ -13,10 +14,9 @@ TicTacToe::TicTacToe(int board_size_x, int board_size_y, int tile_size, int targ
     for(int i=0; i<boardx; i++){
         for(int j=0; j<boardy; j++){
             fields.push_back(new Field(this, i*fsize,j*fsize,fsize,[this,i, j](Eventbutton* s){
-                if(free){
-                   Field* sender=dynamic_cast<Field*>(s);
+                Field* sender=dynamic_cast<Field*>(s);
+                if(sender->free){
                    TicTacToe* _p=dynamic_cast<TicTacToe*>(sender->parent);
-                   _p->step(i,j);
                    sender->free=false;
                    if(this->round){
                     sender->O=true;
@@ -24,22 +24,45 @@ TicTacToe::TicTacToe(int board_size_x, int board_size_y, int tile_size, int targ
                    else{
                     sender->X=true;
                    }
+                   _p->step(i,j);
                 }
             }));
         }
     }
 }
+
+void TicTacToe::reset()
+{
+    X.reset();
+    O.reset();
+    winner="";
+    for(size_t i=0; i<board.size(); i++){
+        for(size_t j=0; j<board[i].size(); j++){
+            board[i][j]=false;
+        }
+    }
+    for(size_t i=0; i<fields.size(); i++){
+        fields[i]->reset();
+    }
+    for(Widget* h:w){
+        h->draw();
+    }
+    gout << refresh;
+}
+
 void TicTacToe::step(int x, int y)
 {
     if(round){
         if(O.addfield(x,y)){
             winner="O";
         }
+        round=false;
     }
     else{
         if(X.addfield(x,y)){
             winner="X";
         }
+        round=true;
     }
 }
 void TicTacToe::eventloop()
@@ -70,7 +93,18 @@ void TicTacToe::eventloop()
             }
         }
         else{
-
+            std::string msg=winner+" won!";
+            std::cout << msg << std::endl;
+            Eventbutton again(this,0,0,200,200,255,255,255,"Play again",[](Eventbutton* sender){
+                    TicTacToe* p=dynamic_cast<TicTacToe*>(sender->parent);
+                    p->reset();
+                    std::cout << "hi";
+                              });
+            again.draw();
+            gout << refresh;
+            if(again.is_there(ev.pos_x,ev.pos_y) && ev.button==btn_left){
+                again.action(ev);
+            }
         }
     }
 }

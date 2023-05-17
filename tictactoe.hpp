@@ -18,6 +18,7 @@ public:
     TicTacToe(int board_size_x, int board_size_y, int tile_size, int target_to_win, unsigned char rr, unsigned char gg, unsigned char bb);
     void step(int x, int y);
     void eventloop() override;
+    void reset();
 };
 
 #endif // TICTACTOE_HPP_INCLUDED

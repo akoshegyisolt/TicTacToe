@@ -8,6 +8,11 @@ Widget::Widget(Application* a, int xx, int yy, int sxx, int syy, unsigned char r
 
 Widget::Widget(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb): x(xx), y(yy), sx(sxx), sy(syy), r(rr), g(gg), b(bb){}
 
+Widget::~Widget()
+{
+    parent->deletewidget(this);
+}
+
 void Widget::action(genv::event ev){}
 bool Widget::is_there(int px, int py)
 {

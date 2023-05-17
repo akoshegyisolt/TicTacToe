@@ -12,6 +12,7 @@ protected:
 public:
     Widget(Application* a, int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb);
     Widget(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb);
+    ~Widget();
     virtual void draw()=0;
     virtual void action(genv::event ev);
     bool is_there(int px, int py);

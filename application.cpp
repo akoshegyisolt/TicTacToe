@@ -97,3 +97,12 @@ void Application::eventloop()
     }
     out.close();
 }
+
+void Application::deletewidget(Widget* ow)
+{
+    for(int i=0; i<w.size(); i++){
+        if(w[i]==ow){
+            w.erase(w.begin()+i);
+        }
+    }
+}

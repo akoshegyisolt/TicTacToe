@@ -12,6 +12,7 @@ public:
     void draw() override;
     void action(genv::event ev) override;
     bool O,X,free;
+    void reset();
 };
 
 #endif // FIELD_HPP_INCLUDED

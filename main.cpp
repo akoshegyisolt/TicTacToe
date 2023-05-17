@@ -3,7 +3,7 @@
 
 int main()
 {
-    TicTacToe ttt(15,15,30,5,0,0,255);
+    TicTacToe ttt(15,15,30,5,0,0,0);
     ttt.eventloop();
     return 0;
 }
