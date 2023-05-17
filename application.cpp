@@ -11,7 +11,7 @@
 using namespace std;
 using namespace genv;
 
-Application::Application(int XX, int YY, unsigned char rr, unsigned char gg, unsigned char bb):r(rr), g(gg), b(bb)
+Application::Application(int X, int Y, unsigned char rr, unsigned char gg, unsigned char bb):XX(X), YY(Y), r(rr), g(gg), b(bb)
 {
     gout.open(XX,YY);
 }
@@ -36,15 +36,11 @@ void Application::addstatictext(int xx, int yy, int sxx, int syy, unsigned char 
     statictexts.push_back(new Statictext(this,xx,yy,sxx,syy,rr,gg,bb,ss));
 }
 
-void Application::addeventbutton(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb, std::string ss, function<void(Application*)> m)
+void Application::addeventbutton(int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb, std::string ss, function<void(Eventbutton*)> m)
 {
     eventbuttons.push_back(new Eventbutton(this, xx, yy, sxx, syy, rr, gg, bb, ss, m));
 }
 
-void Application::addfield(int xx, int yy, int _size,std::function<void(Application*)> m)
-{
-
-}
 
 void Application::addwidget(Widget* nw)
 {
@@ -53,7 +49,7 @@ void Application::addwidget(Widget* nw)
 
 void Application::cclear()
 {
-    gout << move_to(0,0) << color(r,g,b) << box(X,Y);
+    gout << move_to(0,0) << color(r,g,b) << box(XX,YY);
 }
 
 void Application::log(ostream& out)

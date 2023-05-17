@@ -1,7 +1,6 @@
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 
-#include "application.hpp"
 #include <vector>
 
 class Player
@@ -11,6 +10,7 @@ protected:
     int target,boardx,boardy;
 public:
     Player(int boardxx, int boardyy, int n);
+    Player();
     bool addfield(int x,int y);
 };
 

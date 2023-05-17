@@ -8,9 +8,9 @@
 class Eventbutton: public Statictext
 {
 protected:
-    std::function<void(Application*)> evt;
+    std::function<void(Eventbutton*)> evt;
 public:
-    Eventbutton(Application* a, int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb, std::string ss, std::function<void(Application*)> m);
+    Eventbutton(Application* a, int xx, int yy, int sxx, int syy, unsigned char rr, unsigned char gg, unsigned char bb, std::string ss, std::function<void(Eventbutton*)> m);
     void action(genv::event ev) override;
 };
 

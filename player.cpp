@@ -6,6 +6,8 @@ Player::Player(int boardxx, int boardyy, int n):target(n),boardx(boardxx),boardy
     board=std::vector<std::vector<bool>>(boardx,std::vector<bool>(boardy,false));
 }
 
+Player::Player(){}
+
 bool Player::addfield(int x, int y)
 {
     board[x][y]=true;

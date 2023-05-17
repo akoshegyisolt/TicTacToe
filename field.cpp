@@ -5,7 +5,7 @@
 
 using namespace genv;
 
-Field::Field(Application* a, int xx, int yy, int _size, std::function<void(Application*)> m):Eventbutton(a,xx,yy,_size, _size, 0,0,0,"",m)
+Field::Field(Application* a, int xx, int yy, int _size, std::function<void(Eventbutton*)> m):Eventbutton(a,xx,yy,_size, _size, 0,0,0,"",m)
 {
     O=X=false;
     free=true;
@@ -39,6 +39,6 @@ void Field::draw()
 
 void Field::action(event ev)
 {
-    evt(parent);
+    evt(this);
 
 }

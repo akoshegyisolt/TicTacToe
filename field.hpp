@@ -7,12 +7,11 @@
 
 class Field: public Eventbutton
 {
-protected:
-    bool O,X,free;
 public:
-    Field(Application* a, int xx, int yy, int _size,std::function<void(Application*)> m);
+    Field(Application* a, int xx, int yy, int _size,std::function<void(Eventbutton*)> m);
     void draw() override;
     void action(genv::event ev) override;
+    bool O,X,free;
 };
 
 #endif // FIELD_HPP_INCLUDED
