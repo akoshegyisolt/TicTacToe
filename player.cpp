@@ -75,6 +75,22 @@ bool Player::addfield(int x, int y)
                 xk++;
                 yk++;
             }
+            xk=i;
+            yk=boardy-1;
+            n=0;
+            while(xk<boardx && yk>=0){
+                if(board[xk][yk]){
+                    n++;
+                }
+                else{
+                    n=0;
+                }
+                if(n==target){
+                    return true;
+                }
+                xk++;
+                yk--;
+            }
         }
     }
     return false;
