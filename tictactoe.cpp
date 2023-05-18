@@ -5,6 +5,17 @@
 
 using namespace genv;
 
+bool full(std::vector<std::vector<bool>>& v){
+    for(size_t i=0; i<v.size(); i++){
+        for(size_t j=0; j<v.size(); j++){
+            if(v[i][j]==0){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 TicTacToe::TicTacToe(int board_size_x, int board_size_y, int tile_size, int target_to_win, unsigned char rr, unsigned char gg, unsigned char bb):boardx(board_size_x),boardy(board_size_y),fsize(tile_size), target(target_to_win), Application(board_size_x*tile_size,board_size_y*tile_size,rr,gg,bb)
 {
     round=0;
@@ -28,6 +39,7 @@ TicTacToe::TicTacToe(int board_size_x, int board_size_y, int tile_size, int targ
             }));
         }
     }
+    board=std::vector<std::vector<bool>>(boardx,std::vector<bool>(boardy, false));
     again=new Eventbutton(this,150,200,150,50,255,255,255,"Play again",[](Eventbutton* sender){
                     TicTacToe* p=dynamic_cast<TicTacToe*>(sender->parent);
                     p->reset();
@@ -69,6 +81,7 @@ void TicTacToe::step(int x, int y)
         }
         round=true;
     }
+    board[x][y]=true;
 }
 void TicTacToe::eventloop()
 {
@@ -93,8 +106,18 @@ void TicTacToe::eventloop()
                 focus->draw();
                 gout << refresh;
             }
-            if(ev.keycode==key_insert){
-                //log(out);
+            if(full(board)){
+                message->changetext("Board is full!");
+                message->draw();
+                again->draw();
+                gout << refresh;
+                if(again->is_there(ev.pos_x,ev.pos_y) && ev.button==btn_left){
+                    again->action(ev);
+                    for(Field* f:fields){
+                        f->draw();
+                    }
+                    gout << refresh;
+                }
             }
         }
         else{
