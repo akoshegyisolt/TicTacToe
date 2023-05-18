@@ -2,7 +2,6 @@
 #include "graphics.hpp"
 #include "player.hpp"
 #include <functional>
-#include <iostream>
 
 using namespace genv;
 
@@ -29,12 +28,18 @@ TicTacToe::TicTacToe(int board_size_x, int board_size_y, int tile_size, int targ
             }));
         }
     }
+    again=new Eventbutton(this,150,200,150,50,255,255,255,"Play again",[](Eventbutton* sender){
+                    TicTacToe* p=dynamic_cast<TicTacToe*>(sender->parent);
+                    p->reset();
+                              });
+    message= new Statictext(this,150,50,150,50,255,255,255,"");
 }
 
 void TicTacToe::reset()
 {
     X.reset();
     O.reset();
+    round=0;
     winner="";
     for(size_t i=0; i<board.size(); i++){
         for(size_t j=0; j<board[i].size(); j++){
@@ -44,7 +49,7 @@ void TicTacToe::reset()
     for(size_t i=0; i<fields.size(); i++){
         fields[i]->reset();
     }
-    for(Widget* h:w){
+    for(Field* h:fields){
         h->draw();
     }
     gout << refresh;
@@ -69,7 +74,7 @@ void TicTacToe::eventloop()
 {
     event ev;
     Widget* focus=nullptr;
-    for(Widget* h:w){
+    for(Field* h:fields){
         h->draw();
     }
     gout << refresh;
@@ -77,8 +82,8 @@ void TicTacToe::eventloop()
         if(winner==""){
             if(ev.button==btn_left){
                 focus=nullptr;
-                for(size_t i=0; i<w.size(); i++){
-                    if(w[i]->is_there(ev.pos_x, ev.pos_y)){
+                for(size_t i=0; i<fields.size(); i++){
+                    if(fields[i]->is_there(ev.pos_x, ev.pos_y)){
                         focus=w[i];
                     }
                 }
@@ -93,17 +98,17 @@ void TicTacToe::eventloop()
             }
         }
         else{
-            std::string msg=winner+" won!";
-            std::cout << msg << std::endl;
-            Eventbutton again(this,0,0,200,200,255,255,255,"Play again",[](Eventbutton* sender){
-                    TicTacToe* p=dynamic_cast<TicTacToe*>(sender->parent);
-                    p->reset();
-                    std::cout << "hi";
-                              });
-            again.draw();
+            std::string msg=winner+" WON!";
+            message->changetext(msg);
+            message->draw();
+            again->draw();
             gout << refresh;
-            if(again.is_there(ev.pos_x,ev.pos_y) && ev.button==btn_left){
-                again.action(ev);
+            if(again->is_there(ev.pos_x,ev.pos_y) && ev.button==btn_left){
+                again->action(ev);
+                for(Field* f:fields){
+                    f->draw();
+                }
+                gout << refresh;
             }
         }
     }

@@ -39,7 +39,10 @@ void Field::draw()
 
 void Field::action(event ev)
 {
-    evt(this);
+    if(is_there(ev.pos_x,ev.pos_y))
+    {
+        evt(this);
+    }
 
 }
 
