@@ -12,7 +12,6 @@ bool Player::addfield(int x, int y)
 {
     board[x][y]=true;
     int n=0;
-    bool won=false;
     for(int i=0; i<boardx; i++){
         n=0;
         for(int j=0; j<boardy; j++){
@@ -42,20 +41,6 @@ bool Player::addfield(int x, int y)
         }
     }
     n=0;
-    int i=0, j=0;
-    while(i<boardx && j<boardy){
-        if(board[i][j]){
-            n++;
-        }
-        else{
-            n=0;
-        }
-        if(n==target){
-            return true;
-        }
-        i++;
-        j++;
-    }
     int xk,yk;
     for(int i=0; i<boardx; i++){
         for(int j=0; j<boardy; j++){
@@ -75,10 +60,10 @@ bool Player::addfield(int x, int y)
                 xk++;
                 yk++;
             }
-            xk=i;
-            yk=boardy-1;
             n=0;
-            while(xk<boardx && yk>=0){
+            yk=j;
+            xk=i;
+            while(xk>=0 && yk<boardy){
                 if(board[xk][yk]){
                     n++;
                 }
@@ -88,8 +73,8 @@ bool Player::addfield(int x, int y)
                 if(n==target){
                     return true;
                 }
-                xk++;
-                yk--;
+                xk--;
+                yk++;
             }
         }
     }
